@@ -1,0 +1,21 @@
+{
+    "java.search.scope": "all",
+    "cmake.sourceDirectory": "C:/Users/H/Desktop/ggv/student_app/linux",
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "*.dart": "dart"
+    },
+    "dart.flutterSdkPath": "C:\\flutter",
+    "dart.sdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [80],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+##############################################################################
+##
+##  Gradle startup script for UN*X - يستخدم GRADLE_HOME
+##
+##############################################################################
+
+# Check if GRADLE_HOME is set
+if [ -z "$GRADLE_HOME" ]; then
+    echo "ERROR: GRADLE_HOME is not set. Please set GRADLE_HOME environment variable."
+    exit 1
+fi
+
+# Check if JAVA_HOME is set
+if [ -z "$JAVA_HOME" ]; then
+    echo "ERROR: JAVA_HOME is not set. Please set JAVA_HOME environment variable."
+    exit 1
+fi
+
+# Use Gradle from GRADLE_HOME
+GRADLE_APP_PATH="$GRADLE_HOME/bin/gradle"
+
+# Execute Gradle
+exec "$GRADLE_APP_PATH" "$@"

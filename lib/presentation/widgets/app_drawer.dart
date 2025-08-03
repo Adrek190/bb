@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/user_profile_provider.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -22,44 +20,44 @@ class _AppDrawerState extends State<AppDrawer> {
             height: 280,
             width: double.infinity,
             color: Colors.grey.shade100,
-            child: Consumer<UserProfileProvider>(
-              builder: (context, userProvider, child) {
-                return Column(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // صورة المستخدم (مؤقتة)
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.amber,
+                  child: Icon(
+                    Icons.person,
+                    size: 50,
+                    color: Colors.grey.shade600,
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // اسم المستخدم (مؤقت)
+                const Text(
+                  'ولي الأمر',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 8),
+
+                // أيقونة الموقع
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // صورة المستخدم
-                    userProvider.buildUserAvatar(
-                      radius: 50,
-                      backgroundColor: Colors.amber,
-                      iconColor: Colors.grey.shade600,
-                    ),
-                    const SizedBox(height: 16),
-
-                    // اسم المستخدم
-                    Text(
-                      userProvider.userName,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-
-                    // أيقونة الموقع
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          color: Colors.grey.shade500,
-                          size: 20,
-                        ),
-                      ],
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.grey.shade500,
+                      size: 20,
                     ),
                   ],
-                );
-              },
+                ),
+              ],
             ),
           ),
 
@@ -68,6 +66,24 @@ class _AppDrawerState extends State<AppDrawer> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
+                // الصفحة الرئيسية
+                _buildDrawerItem(
+                  icon: Icons.home,
+                  title: 'الصفحة الرئيسية',
+                  textColor: Colors.blue,
+                  iconColor: Colors.blue,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
+                ),
+
+                const Divider(height: 1),
+
                 _buildDrawerItem(
                   icon: Icons.receipt_long,
                   title: 'الفواتير',
@@ -82,7 +98,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   title: 'الطلبات',
                   onTap: () {
                     Navigator.pop(context);
-                    // TODO: إضافة صفحة الطلبات
+                    Navigator.pushNamed(context, '/requests');
                   },
                 ),
 
@@ -118,7 +134,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   title: 'الاشتراكات',
                   onTap: () {
                     Navigator.pop(context);
-                    // TODO: إضافة صفحة الاشتراكات
+                    Navigator.pushNamed(context, '/subscriptions');
                   },
                 ),
 

@@ -46,6 +46,17 @@ dependencies:
   http: ^1.2.2
   dio: ^5.4.3+1
   
+  # 🆕 Supabase Integration
+  supabase_flutter: ^2.5.6                 # Supabase Flutter SDK
+  postgrest: ^2.1.1                        # للاستعلامات المتقدمة
+  realtime_client: ^2.0.0                  # للتحديثات الفورية
+  
+  # 🆕 أدوات إضافية للأمان والأداء
+  dio_cache_interceptor: ^3.4.4            # Caching للطلبات
+  flutter_secure_storage: ^9.0.0           # تخزين آمن للـ tokens
+  connectivity_plus: ^5.0.2                # فحص الاتصال بالإنترنت
+  retry: ^3.1.2                            # إعادة المحاولة للطلبات الفاشلة
+  
   # Local Storage
   shared_preferences: ^2.2.3
   
@@ -53,8 +64,23 @@ dependencies:
   image_picker: ^1.0.7
   permission_handler: ^11.3.0
   
+  # External Apps
+  url_launcher: ^6.2.4
+  
   # Internationalization
   intl: ^0.20.2
+  
+  # Additional packages for Add Child Feature
+  uuid: ^4.1.0                              # إنشاء معرفات فريدة
+  path_provider: ^2.1.1                     # إدارة مسارات الملفات
+  form_builder_validators: ^11.2.0          # التحقق من صحة النماذج
+  shimmer: ^3.0.0                           # تأثيرات التحميل
+  flutter_slidable: ^3.0.1                 # السحب للحذف/التعديل
+  cached_network_image: ^3.3.0             # تخزين الصور مؤقتاً
+  
+  # Location Services - إضافة جديدة للمرحلة الأولى
+  geolocator: ^11.0.0                       # للحصول على الموقع الجغرافي
+  geocoding: ^3.0.0                         # لتحويل الإحداثيات لعنوان
 
 dev_dependencies:
   flutter_test:

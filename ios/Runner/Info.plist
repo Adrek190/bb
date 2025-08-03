@@ -45,5 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Location Permissions - إضافة جديدة للمرحلة الأولى -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>نحتاج للوصول للموقع لتحديد عنوان الطفل بدقة</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>نحتاج للوصول للموقع لتحديد عنوان الطفل بدقة</string>
 </dict>
 </plist>

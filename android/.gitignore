@@ -1,11 +1,23 @@
+# Gradle files (old system removed)
 gradle-wrapper.jar
 /.gradle
 /captures/
+
+# Original gradlew files (removed - we use custom ones)
 /gradlew
 /gradlew.bat
+
+# Gradle distribution downloads (not needed with GRADLE_HOME)
+gradle/wrapper/dists/
+
+# Local configuration files  
 /local.properties
 GeneratedPluginRegistrant.java
 .cxx/
+
+# Keep our custom gradle files
+!/gradlew_custom.bat
+!/setup_env.bat
 
 # Remember to never publicly share your keystore.
 # See https://flutter.dev/to/reference-keystore

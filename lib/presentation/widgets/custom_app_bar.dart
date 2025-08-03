@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/user_profile_provider.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -39,22 +37,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             )
           : null,
 
-      // أيقونة المستخدم في الجانب الأيمن (actions)
+      // أيقونة المستخدم في الجانب الأيمن (actions) - مؤقتة
       actions: showUserIcon
           ? [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Consumer<UserProfileProvider>(
-                  builder: (context, userProvider, child) {
-                    return GestureDetector(
-                      onTap: onUserPressed,
-                      child: userProvider.buildUserAvatar(
-                        radius: 20.0,
-                        backgroundColor: Colors.amber,
-                        iconColor: Colors.grey.shade600,
-                      ),
-                    );
-                  },
+                child: GestureDetector(
+                  onTap: onUserPressed,
+                  child: CircleAvatar(
+                    radius: 20.0,
+                    backgroundColor: Colors.amber,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.grey.shade600,
+                      size: 20,
+                    ),
+                  ),
                 ),
               ),
             ]
